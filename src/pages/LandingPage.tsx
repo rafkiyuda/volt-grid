@@ -10,13 +10,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLoginClick }) => {
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', overflowX: 'hidden' }}>
       {/* Navigation */}
-      <nav style={{ 
-        position: 'fixed', top: 0, width: '100%', zIndex: 100, 
-        background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid var(--glass-border)', padding: '16px 5%'
-      }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+      <nav className="app-header" style={{ padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className="brand-icon" style={{ width: '36px', height: '36px' }}>
               <Zap size={20} strokeWidth={2.5} />
             </div>
@@ -42,7 +37,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLoginClick }) => {
               Login Dashboard
             </button>
           </div>
-        </div>
       </nav>
 
       {/* Hero Section */}
