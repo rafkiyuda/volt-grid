@@ -48,6 +48,58 @@ const LandingHome: React.FC = () => {
         </div>
       </section>
 
+      {/* Trusted By Section */}
+      <section style={{ padding: '60px 5%', background: '#fff', borderBottom: '1px solid var(--glass-border)' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '32px' }}>
+            Dipercaya Oleh Lebih Dari 50+ Event Organizer & Production House
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '64px', opacity: 0.5, filter: 'grayscale(100%)' }}>
+            {/* Placeholder Logos */}
+            <div style={{ fontSize: '1.5rem', fontWeight: 900 }}>LIVE NATION</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 900, fontStyle: 'italic' }}>ISMAYA LIVE</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 900 }}>SOUNDRHYTHM</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'serif' }}>JAVA FESTIVAL</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 900 }}>WE THE FEST</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose VOLT-GRID */}
+      <section style={{ padding: '100px 5%', background: 'var(--bg-color)' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px' }}>Mengapa Memilih VOLT-GRID?</h2>
+            <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+              Kami memikirkan ulang cara event diselenggarakan dengan menyediakan infrastruktur energi modern yang tidak hanya kuat, tapi juga berwawasan masa depan.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+            <div style={{ background: 'var(--bg-color-secondary)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
+              <div style={{ width: '60px', height: '60px', background: 'rgba(5, 150, 105, 0.1)', color: 'var(--status-success)', borderRadius: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px' }}>
+                <CheckCircle2 size={32} />
+              </div>
+              <h4 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '16px' }}>Zero Emission & Noise</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>Tidak ada asap knalpot, tidak ada suara bising generator diesel. Berikan pengalaman audio terbaik untuk penonton dan *environment* yang nyaman.</p>
+            </div>
+            <div style={{ background: 'var(--bg-color-secondary)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
+              <div style={{ width: '60px', height: '60px', background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6', borderRadius: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px' }}>
+                <Shield size={32} />
+              </div>
+              <h4 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '16px' }}>Arus Stabil (Pure Sine Wave)</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>Melindungi instrumen musik mahal, *lighting rig*, dan *LED screen* Anda dari fluktuasi voltase yang sering terjadi pada genset konvensional.</p>
+            </div>
+            <div style={{ background: 'var(--bg-color-secondary)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
+              <div style={{ width: '60px', height: '60px', background: 'rgba(245, 158, 11, 0.1)', color: 'var(--status-warning)', borderRadius: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px' }}>
+                <Zap size={32} />
+              </div>
+              <h4 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '16px' }}>Skalabilitas Tinggi</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>Mulai dari kebutuhan 2 kWh untuk pop-up cafe hingga puluhan MWh (megawatt-hour) tersinkronisasi untuk panggung utama konser mega.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Professional Product Showcase (Restored Grid) */}
       <section id="produk" style={{ padding: '100px 5%', background: 'var(--bg-color-secondary)' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>

@@ -41,8 +41,62 @@ const PublicLayout: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer style={{ padding: '40px 5%', background: 'var(--bg-color-secondary)', borderTop: '1px solid var(--glass-border)', textAlign: 'center' }}>
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 600 }}>&copy; 2026 VOLT-GRID Technologies. All rights reserved.</p>
+      <footer style={{ background: '#020617', color: 'rgba(255,255,255,0.7)', padding: '80px 5% 40px 5%', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '64px', marginBottom: '64px' }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+              <div style={{ width: '36px', height: '36px', background: 'var(--accent-primary)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+                <Zap size={20} strokeWidth={2.5} />
+              </div>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff' }}>VOLT-GRID</span>
+            </div>
+            <p style={{ lineHeight: 1.6, marginBottom: '24px', fontSize: '0.95rem' }}>
+              Penyedia infrastruktur energi bersih portabel untuk industri kreatif dan mega event. Silent power, zero emission.
+            </p>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>IG</div>
+              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>LI</div>
+              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>YT</div>
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 700, marginBottom: '24px' }}>Produk</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <li><Link to="/sewa" style={{ color: 'inherit', textDecoration: 'none' }}>VOLT PRO MAX (Stage)</Link></li>
+              <li><Link to="/sewa" style={{ color: 'inherit', textDecoration: 'none' }}>VOLT PRO (Medium)</Link></li>
+              <li><Link to="/sewa" style={{ color: 'inherit', textDecoration: 'none' }}>VOLT BASIC (Tenant)</Link></li>
+              <li><Link to="/sewa" style={{ color: 'inherit', textDecoration: 'none' }}>Custom PDU Setup</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 700, marginBottom: '24px' }}>Perusahaan</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <li><Link to="/tentang" style={{ color: 'inherit', textDecoration: 'none' }}>Tentang Kami</Link></li>
+              <li><Link to="/tentang" style={{ color: 'inherit', textDecoration: 'none' }}>Visi & Misi</Link></li>
+              <li><Link to="#" style={{ color: 'inherit', textDecoration: 'none' }}>Karir</Link></li>
+              <li><Link to="#" style={{ color: 'inherit', textDecoration: 'none' }}>Blog & Berita</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 700, marginBottom: '24px' }}>Hubungi Kami</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <li>Gedung VOLT Tower, Jl. Energi Bersih No. 12, Jakarta Selatan</li>
+              <li>halo@voltgrid.co.id</li>
+              <li>+62 811 9999 8888</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div style={{ maxWidth: '1400px', margin: '0 auto', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem' }}>
+          <p>&copy; 2026 VOLT-GRID Technologies. All rights reserved.</p>
+          <div style={{ display: 'flex', gap: '24px' }}>
+            <span>Kebijakan Privasi</span>
+            <span>Syarat & Ketentuan</span>
+          </div>
+        </div>
       </footer>
     </div>
   );
