@@ -94,39 +94,39 @@ export const Rent: React.FC<RentProps> = ({ onRentAction, hideHeader }) => {
   };
 
   return (
-    <div className={hideHeader ? "" : "page-container animate-fade-in"}>
+    <div className={hideHeader ? "" : "page-container animate-fade-in"} style={{ background: '#020617', minHeight: '100vh', color: '#fff' }}>
       {!hideHeader && (
-        <div style={{ marginBottom: '32px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '8px' }}>Sewa Energi</h2>
-          <p style={{ color: 'var(--text-secondary)' }}>Pilih paket baterai sesuai kebutuhan operasional Anda.</p>
+        <div style={{ marginBottom: '48px', textAlign: 'center', paddingTop: '40px' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '12px', color: '#fff' }}>Katalog Sewa VOLT-GRID</h2>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>Pilih paket baterai portabel sesuai dengan kebutuhan daya dan durasi operasional event Anda.</p>
         </div>
       )}
 
-      <div className="responsive-grid-2" style={{ paddingBottom: '24px' }}>
+      <div className="responsive-grid-2" style={{ paddingBottom: '64px', maxWidth: '1400px', margin: '0 auto' }}>
         {products.map((product) => (
-          <div key={product.id} className="card" style={{ display: 'flex', flexDirection: 'column', padding: '24px' }}>
-            <div style={{ width: '100%', height: '220px', borderRadius: '16px', overflow: 'hidden', marginBottom: '20px', background: '#fff' }}>
-              <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <div key={product.id} className="card" style={{ display: 'flex', flexDirection: 'column', padding: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px' }}>
+            <div style={{ width: '100%', height: '240px', borderRadius: '16px', overflow: 'hidden', marginBottom: '24px', background: 'rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img src={product.image} alt={product.name} style={{ width: '80%', height: '80%', objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))' }} />
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
               <div>
-                <div style={{ fontWeight: 800, fontSize: '1.4rem', color: 'var(--text-primary)', marginBottom: '4px' }}>{product.name}</div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{product.desc}</div>
+                <div style={{ fontWeight: 800, fontSize: '1.6rem', color: '#fff', marginBottom: '8px' }}>{product.name}</div>
+                <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)' }}>{product.desc}</div>
               </div>
-              <div style={{ background: 'rgba(5, 150, 105, 0.1)', color: 'var(--accent-primary)', padding: '6px 12px', borderRadius: '12px', fontSize: '0.85rem', fontWeight: 700 }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.1)', color: 'var(--status-success)', padding: '6px 16px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 800, border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                 {product.capacity}
               </div>
             </div>
             
-            <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '24px' }}>
-              {formatRupiah(product.price)}<span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-secondary)' }}>/hari</span>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '32px', marginTop: '16px' }}>
+              {formatRupiah(product.price)}<span style={{ fontSize: '1.1rem', fontWeight: 500, color: 'rgba(255,255,255,0.5)' }}>/hari</span>
             </div>
 
             <button 
               onClick={() => setSelectedProduct(product)}
-              style={{ width: '100%', padding: '14px', borderRadius: '12px', background: 'var(--accent-primary)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '1rem', transition: 'all 0.2s', marginTop: 'auto', boxShadow: '0 4px 12px var(--accent-primary-glow)' }}
+              style={{ width: '100%', padding: '16px', borderRadius: '50px', background: '#fff', color: '#020617', border: 'none', cursor: 'pointer', fontWeight: 800, fontSize: '1.05rem', transition: 'all 0.2s', marginTop: 'auto' }}
             >
-              Detail & Sewa
+              Lihat Detail Spesifikasi
             </button>
           </div>
         ))}
@@ -136,74 +136,74 @@ export const Rent: React.FC<RentProps> = ({ onRentAction, hideHeader }) => {
       {selectedProduct && (
         <div style={{
           position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-          background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', zIndex: 1000,
+          background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(8px)', zIndex: 1000,
           display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'
         }}>
           <div style={{
-            background: 'var(--bg-color)', width: '100%', maxWidth: '500px',
-            borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+            background: '#0a192f', width: '100%', maxWidth: '600px',
+            borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)',
             animation: 'fadeIn 0.3s ease-out'
           }}>
-            <div style={{ padding: '24px', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 800, margin: 0 }}>Detail Produk</h3>
-              <button onClick={() => setSelectedProduct(null)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)' }}>
-                <X size={24} />
+            <div style={{ padding: '24px 32px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 800, margin: 0, color: '#fff' }}>Detail Spesifikasi</h3>
+              <button onClick={() => setSelectedProduct(null)} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', cursor: 'pointer', color: '#fff', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <X size={20} />
               </button>
             </div>
             
-            <div style={{ padding: '24px', maxHeight: '70vh', overflowY: 'auto' }}>
-              <div style={{ width: '100%', height: '240px', borderRadius: '16px', overflow: 'hidden', marginBottom: '24px', background: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <div style={{ padding: '32px', maxHeight: '70vh', overflowY: 'auto' }}>
+              <div style={{ width: '100%', height: '240px', borderRadius: '16px', overflow: 'hidden', marginBottom: '32px', background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))' }} />
               </div>
-              <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-primary)' }}>{selectedProduct.name}</div>
-                <div style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginTop: '4px' }}>{formatRupiah(selectedProduct.price)}/hari</div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
-                <div style={{ background: 'var(--glass-bg)', padding: '16px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}><Battery size={16} /> Kapasitas</div>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 700 }}>{selectedProduct.capacity}</div>
-                </div>
-                <div style={{ background: 'var(--glass-bg)', padding: '16px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}><Zap size={16} /> Output Max</div>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 700 }}>{selectedProduct.output}</div>
-                </div>
-                <div style={{ background: 'var(--glass-bg)', padding: '16px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}><Activity size={16} /> Battery Health</div>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--status-success)' }}>{selectedProduct.health}%</div>
-                </div>
-                <div style={{ background: 'var(--glass-bg)', padding: '16px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}><MapPin size={16} /> Lokasi</div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>Tersedia</div>
-                </div>
+              <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+                <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.5px' }}>{selectedProduct.name}</div>
+                <div style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.6)', marginTop: '8px' }}>{formatRupiah(selectedProduct.price)} <span style={{fontSize: '0.9rem'}}>/hari</span></div>
               </div>
 
-              <div style={{ marginBottom: '24px' }}>
-                <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}><Clock size={18} /> Estimasi Pemakaian</h4>
-                <div style={{ background: 'var(--glass-bg)', borderRadius: '16px', border: '1px solid var(--glass-border)', overflow: 'hidden' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}><Battery size={16} /> Kapasitas</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff' }}>{selectedProduct.capacity}</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}><Zap size={16} /> Output Max</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff' }}>{selectedProduct.output}</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}><Activity size={16} /> Battery Health</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--status-success)' }}>{selectedProduct.health}%</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}><MapPin size={16} /> Ketersediaan</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>Tersedia (Ready)</div>
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '32px' }}>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff' }}><Clock size={18} color="var(--accent-primary)" /> Estimasi Pemakaian Daya</h4>
+                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden' }}>
                   {selectedProduct.estimations.map((est, i) => (
-                    <div key={i} style={{ padding: '12px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: i !== selectedProduct.estimations.length - 1 ? '1px solid var(--glass-border)' : 'none' }}>
+                    <div key={i} style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: i !== selectedProduct.estimations.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
                       <div>
-                        <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{est.device}</div>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{est.watts}</div>
+                        <div style={{ fontWeight: 600, fontSize: '1rem', color: '#fff', marginBottom: '4px' }}>{est.device}</div>
+                        <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)' }}>{est.watts}</div>
                       </div>
-                      <div style={{ fontWeight: 700, color: 'var(--accent-primary)' }}>{est.hours}</div>
+                      <div style={{ fontWeight: 800, color: 'var(--status-success)', fontSize: '1.1rem' }}>{est.hours}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div style={{ marginBottom: '24px' }}>
-                <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '8px' }}>Lokasi Pengambilan</h4>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{selectedProduct.location}</p>
+              <div style={{ marginBottom: '16px' }}>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '12px', color: '#fff' }}>Lokasi Pengambilan</h4>
+                <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{selectedProduct.location}</p>
               </div>
 
             </div>
 
-            <div style={{ padding: '24px', borderTop: '1px solid var(--glass-border)', background: 'var(--bg-color-secondary)' }}>
-              <button onClick={() => { if(onRentAction) onRentAction(); else alert('Fungsi penyewaan segera hadir!'); }} style={{ width: '100%', padding: '16px', borderRadius: '16px', background: 'var(--accent-primary)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '1.1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', boxShadow: '0 8px 24px var(--accent-primary-glow)', transition: 'transform 0.2s' }}>
-                Sewa Sekarang <ChevronRight size={20} />
+            <div style={{ padding: '32px', borderTop: '1px solid rgba(255,255,255,0.1)', background: '#020617' }}>
+              <button onClick={() => { if(onRentAction) onRentAction(); else alert('Fungsi penyewaan akan diarahkan ke WhatsApp/Login'); }} style={{ width: '100%', padding: '18px', borderRadius: '50px', background: 'var(--status-success)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 800, fontSize: '1.1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', boxShadow: '0 8px 24px rgba(16, 185, 129, 0.3)', transition: 'transform 0.2s' }}>
+                Pesan Sekarang <ChevronRight size={20} />
               </button>
             </div>
           </div>

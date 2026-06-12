@@ -302,20 +302,26 @@ const LandingHome: React.FC = () => {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* FAQ 1 */}
-            <div style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '12px' }}>Apakah VOLT-GRID aman digunakan di area outdoor saat hujan?</h4>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>Ya, unit seri VOLT PRO dan PRO MAX memiliki sertifikasi IP65 yang dirancang khusus untuk operasional event outdoor. Bodi kabinet kedap air sehingga aman meski terkena guyuran hujan.</p>
-            </div>
+            <details style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)', cursor: 'pointer' }}>
+              <summary style={{ fontSize: '1.2rem', fontWeight: 700, outline: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                Apakah VOLT-GRID aman digunakan di area outdoor saat hujan?
+              </summary>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>Ya, unit seri VOLT PRO dan PRO MAX memiliki sertifikasi IP65 yang dirancang khusus untuk operasional event outdoor. Bodi kabinet kedap air sehingga aman meski terkena guyuran hujan.</p>
+            </details>
             {/* FAQ 2 */}
-            <div style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '12px' }}>Bagaimana jika daya baterai habis di tengah acara?</h4>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>Untuk paket *Full Service*, kami menyediakan *backup unit* di lokasi event. Teknisi kami yang *standby* akan melakukan proses *hot-swap* (pergantian baterai) tanpa menyebabkan *downtime* atau matinya aliran listrik.</p>
-            </div>
+            <details style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)', cursor: 'pointer' }}>
+              <summary style={{ fontSize: '1.2rem', fontWeight: 700, outline: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                Bagaimana jika daya baterai habis di tengah acara?
+              </summary>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>Untuk paket *Full Service*, kami menyediakan *backup unit* di lokasi event. Teknisi kami yang *standby* akan melakukan proses *hot-swap* (pergantian baterai) tanpa menyebabkan *downtime* atau matinya aliran listrik.</p>
+            </details>
             {/* FAQ 3 */}
-            <div style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '12px' }}>Berapa lama baterai bisa bertahan?</h4>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>Ketahanan baterai berbanding lurus dengan beban daya yang Anda gunakan. Tim konsultan daya kami akan menghitung *load* alat-alat Anda (lighting, sound system, mesin pembuat kopi) untuk memberikan estimasi dan rekomendasi kapasitas yang tepat.</p>
-            </div>
+            <details style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)', cursor: 'pointer' }}>
+              <summary style={{ fontSize: '1.2rem', fontWeight: 700, outline: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                Berapa lama baterai bisa bertahan?
+              </summary>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>Ketahanan baterai berbanding lurus dengan beban daya yang Anda gunakan. Tim konsultan daya kami akan menghitung *load* alat-alat Anda (lighting, sound system, mesin pembuat kopi) untuk memberikan estimasi dan rekomendasi kapasitas yang tepat.</p>
+            </details>
           </div>
         </div>
       </section>
