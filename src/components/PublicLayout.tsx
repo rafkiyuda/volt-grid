@@ -1,12 +1,21 @@
-import React from 'react';
-import { Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Zap, QrCode } from 'lucide-react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { ScannerModal } from './ScannerModal';
 
 const PublicLayout: React.FC = () => {
   const navigate = useNavigate();
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
+
+  const handleScanSuccess = () => {
+    setIsScannerOpen(false);
+    // Simulate successful scan redirecting to Rent page (or a specific rented product)
+    alert("Berhasil scan barcode perangkat! Mengarahkan ke form penyewaan...");
+    navigate('/sewa');
+  };
 
   return (
-    <div style={{ background: 'var(--bg-color)', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflowX: 'hidden' }}>
+    <div style={{ background: 'var(--bg-color)', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflowX: 'hidden', position: 'relative' }}>
       {/* Navigation */}
       <nav className="app-header" style={{ padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => navigate('/')}>
@@ -39,6 +48,30 @@ const PublicLayout: React.FC = () => {
       <main style={{ flex: 1 }}>
         <Outlet />
       </main>
+
+      {/* Floating Action Button */}
+      <div style={{ position: 'fixed', bottom: '40px', right: '40px', zIndex: 9000 }}>
+        <button 
+          onClick={() => setIsScannerOpen(true)}
+          style={{ 
+            display: 'flex', alignItems: 'center', gap: '12px',
+            padding: '16px 24px', borderRadius: '50px', 
+            background: 'var(--status-success)', color: '#fff', 
+            border: 'none', cursor: 'pointer', fontWeight: 800, fontSize: '1.1rem',
+            boxShadow: '0 10px 20px rgba(16, 185, 129, 0.4)', transition: 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          <QrCode size={24} /> Scan & Rent
+        </button>
+      </div>
+
+      <ScannerModal 
+        isOpen={isScannerOpen} 
+        onClose={() => setIsScannerOpen(false)} 
+        onSuccess={handleScanSuccess} 
+      />
 
       {/* Footer */}
       <footer style={{ background: '#020617', color: 'rgba(255,255,255,0.7)', padding: '80px 5% 40px 5%', borderTop: '1px solid rgba(255,255,255,0.1)' }}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Zap, Battery, MapPin, Activity, Clock, X, ChevronRight } from 'lucide-react';
+import { Zap, Battery, MapPin, Activity, Clock, X, ChevronRight, QrCode } from 'lucide-react';
+import { ScannerModal } from '../components/ScannerModal';
 
 export interface Product {
   id: string;
@@ -88,9 +89,17 @@ interface RentProps {
 
 export const Rent: React.FC<RentProps> = ({ onRentAction, hideHeader }) => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
 
   const formatRupiah = (price: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(price);
+  };
+
+  const handleScanSuccess = () => {
+    setIsScannerOpen(false);
+    setSelectedProduct(null); // close modal
+    if (onRentAction) onRentAction();
+    else alert('Scan berhasil! Mengarahkan ke proses pembayaran / dashboard...');
   };
 
   return (
@@ -201,14 +210,24 @@ export const Rent: React.FC<RentProps> = ({ onRentAction, hideHeader }) => {
 
             </div>
 
-            <div style={{ padding: '32px', borderTop: '1px solid var(--glass-border)', background: '#f8fafc' }}>
-              <button onClick={() => { if(onRentAction) onRentAction(); else alert('Fungsi penyewaan akan diarahkan ke WhatsApp/Login'); }} style={{ width: '100%', padding: '18px', borderRadius: '50px', background: 'var(--status-success)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 800, fontSize: '1.1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', boxShadow: '0 8px 24px rgba(16, 185, 129, 0.3)', transition: 'transform 0.2s' }}>
-                Pesan Sekarang <ChevronRight size={20} />
+            <div style={{ padding: '32px', borderTop: '1px solid var(--glass-border)', background: '#f8fafc', display: 'flex', gap: '16px' }}>
+              <button onClick={() => setIsScannerOpen(true)} style={{ flex: 1, padding: '18px', borderRadius: '50px', background: '#fff', color: 'var(--text-primary)', border: '2px solid var(--glass-border)', cursor: 'pointer', fontWeight: 800, fontSize: '1.1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', transition: 'transform 0.2s', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                <QrCode size={20} /> Scan QR Alat
+              </button>
+              <button onClick={() => { if(onRentAction) onRentAction(); else alert('Fungsi penyewaan akan diarahkan ke WhatsApp/Login'); }} style={{ flex: 1, padding: '18px', borderRadius: '50px', background: 'var(--status-success)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 800, fontSize: '1.1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', boxShadow: '0 8px 24px rgba(16, 185, 129, 0.3)', transition: 'transform 0.2s' }}>
+                Pesan <ChevronRight size={20} />
               </button>
             </div>
           </div>
         </div>
       )}
+
+      {/* Local Scanner Modal for the Rent page specifically */}
+      <ScannerModal 
+        isOpen={isScannerOpen} 
+        onClose={() => setIsScannerOpen(false)} 
+        onSuccess={handleScanSuccess} 
+      />
     </div>
   );
 };
