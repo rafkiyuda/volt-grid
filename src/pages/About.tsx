@@ -32,29 +32,29 @@ const About: React.FC = () => {
       </section>
 
       {/* Data & Parameters Section */}
-      <section style={{ padding: '80px 5%', background: '#0a192f', color: '#fff' }}>
+      <section style={{ padding: '80px 5%', background: '#ffffff', color: 'var(--text-primary)', borderTop: '1px solid var(--glass-border)' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '64px' }}>VOLT-GRID Dalam Angka</h2>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '64px', color: 'var(--text-primary)' }}>VOLT-GRID Dalam Angka</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
-            <div style={{ padding: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <Users size={48} color="var(--accent-primary)" style={{ margin: '0 auto 24px auto' }} />
+            <div style={{ padding: '32px', background: '#f8fafc', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+              <Users size={48} color="var(--status-success)" style={{ margin: '0 auto 24px auto' }} />
               <div style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '8px' }}>500+</div>
-              <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Event Terlayani</div>
+              <div style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Event Terlayani</div>
             </div>
-            <div style={{ padding: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ padding: '32px', background: '#f8fafc', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <BatteryCharging size={48} color="var(--status-success)" style={{ margin: '0 auto 24px auto' }} />
               <div style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '8px' }}>50 MWh</div>
-              <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Kapasitas Tersedia</div>
+              <div style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Kapasitas Tersedia</div>
             </div>
-            <div style={{ padding: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <CheckCircle2 size={48} color="#3b82f6" style={{ margin: '0 auto 24px auto' }} />
+            <div style={{ padding: '32px', background: '#f8fafc', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+              <CheckCircle2 size={48} color="var(--status-success)" style={{ margin: '0 auto 24px auto' }} />
               <div style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '8px' }}>100%</div>
-              <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Uptime Record</div>
+              <div style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Uptime Record</div>
             </div>
-            <div style={{ padding: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <Clock size={48} color="var(--status-warning)" style={{ margin: '0 auto 24px auto' }} />
+            <div style={{ padding: '32px', background: '#f8fafc', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+              <Clock size={48} color="var(--status-success)" style={{ margin: '0 auto 24px auto' }} />
               <div style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '8px' }}>24/7</div>
-              <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Support Teknisi</div>
+              <div style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Support Teknisi</div>
             </div>
           </div>
         </div>
