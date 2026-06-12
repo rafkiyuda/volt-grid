@@ -291,6 +291,68 @@ const LandingHome: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section style={{ padding: '100px 5%', background: 'var(--bg-color)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px' }}>Frequently Asked Questions</h2>
+            <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
+              Pertanyaan yang sering diajukan mengenai layanan penyewaan VOLT-GRID.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {/* FAQ 1 */}
+            <div style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '12px' }}>Apakah VOLT-GRID aman digunakan di area outdoor saat hujan?</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>Ya, unit seri VOLT PRO dan PRO MAX memiliki sertifikasi IP65 yang dirancang khusus untuk operasional event outdoor. Bodi kabinet kedap air sehingga aman meski terkena guyuran hujan.</p>
+            </div>
+            {/* FAQ 2 */}
+            <div style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '12px' }}>Bagaimana jika daya baterai habis di tengah acara?</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>Untuk paket *Full Service*, kami menyediakan *backup unit* di lokasi event. Teknisi kami yang *standby* akan melakukan proses *hot-swap* (pergantian baterai) tanpa menyebabkan *downtime* atau matinya aliran listrik.</p>
+            </div>
+            {/* FAQ 3 */}
+            <div style={{ background: 'var(--bg-color-secondary)', padding: '32px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '12px' }}>Berapa lama baterai bisa bertahan?</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>Ketahanan baterai berbanding lurus dengan beban daya yang Anda gunakan. Tim konsultan daya kami akan menghitung *load* alat-alat Anda (lighting, sound system, mesin pembuat kopi) untuk memberikan estimasi dan rekomendasi kapasitas yang tepat.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section (Masih Ada Pertanyaan) */}
+      <section style={{ padding: '0 5% 100px 5%', background: 'var(--bg-color)' }}>
+        <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
+          background: '#0ea5e9', /* A pleasant green/teal brand color */
+          backgroundImage: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+          borderRadius: '24px', 
+          padding: '64px', 
+          textAlign: 'center',
+          color: '#fff',
+          boxShadow: '0 20px 40px rgba(16, 185, 129, 0.2)'
+        }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px', color: '#fff' }}>Masih Ada Pertanyaan?</h2>
+          <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px auto' }}>
+            Tim kami siap membantu Anda. Hubungi kami untuk informasi lebih lanjut.
+          </p>
+          <button style={{ 
+            padding: '16px 32px', 
+            background: '#ffffff', 
+            color: '#059669', 
+            border: 'none', 
+            borderRadius: '12px', 
+            fontWeight: 800, 
+            fontSize: '1.1rem',
+            cursor: 'pointer',
+            boxShadow: '0 8px 16px rgba(0,0,0,0.1)'
+          }}>
+            Hubungi Kami via WhatsApp
+          </button>
+        </div>
+      </section>
+
     </div>
   );
 };
