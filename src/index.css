@@ -107,3 +107,46 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Responsive Grid Utilities */
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .grid-responsive-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+}
+
+.grid-responsive-auto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .grid-responsive-auto {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+}
+
+.hero-padding {
+  padding: 100px 5% 60px 5%;
+}
+@media (min-width: 768px) {
+  .hero-padding {
+    padding: 160px 5% 100px 5%;
+  }
+}
+
+.hero-title {
+  font-size: 2.5rem !important;
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem !important;
+  }
+}

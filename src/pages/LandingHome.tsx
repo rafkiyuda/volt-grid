@@ -8,18 +8,17 @@ const LandingHome: React.FC = () => {
   return (
     <div className="animate-fade-in" style={{ background: 'var(--bg-color)', color: 'var(--text-primary)' }}>
       {/* Hero Section */}
-      <section style={{ 
-        padding: '160px 5% 100px 5%', 
+      <section className="hero-padding" style={{ 
         minHeight: '90vh', 
         display: 'flex', 
         alignItems: 'center',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+        <div className="grid-responsive-2" style={{ maxWidth: '1400px', margin: '0 auto', alignItems: 'center' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '50px', color: 'var(--status-success)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '24px' }}>
               <Zap size={16} /> Solusi Energi Cerdas Tanpa Asap
             </div>
-            <h1 style={{ fontSize: '4.5rem', fontWeight: 900, lineHeight: 1.1, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-1px' }}>
+            <h1 className="hero-title" style={{ fontWeight: 900, lineHeight: 1.1, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-1px' }}>
               Silent Power <span className="gradient-text">Untuk Event Anda.</span>
             </h1>
             <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px', maxWidth: '90%' }}>
@@ -74,7 +73,7 @@ const LandingHome: React.FC = () => {
               Kami memikirkan ulang cara event diselenggarakan dengan menyediakan infrastruktur energi modern yang tidak hanya kuat, tapi juga berwawasan masa depan.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+          <div className="grid-responsive-auto">
             <div style={{ background: 'var(--bg-color-secondary)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
               <div style={{ width: '60px', height: '60px', background: 'rgba(5, 150, 105, 0.1)', color: 'var(--status-success)', borderRadius: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px' }}>
                 <CheckCircle2 size={32} />
@@ -110,7 +109,7 @@ const LandingHome: React.FC = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '32px' }}>
+          <div className="grid-responsive-auto">
             {/* Product 1 */}
             <div className="card" style={{ padding: '40px', display: 'flex', flexDirection: 'column' }}>
               <div style={{ height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '32px', background: 'var(--glass-bg)', borderRadius: '24px', overflow: 'hidden' }}>
@@ -165,9 +164,9 @@ const LandingHome: React.FC = () => {
       </section>
 
       {/* Terangin-style Product Section 1 */}
-      <section id="produk" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '800px', background: '#ffffff', color: 'var(--text-primary)' }}>
+      <section id="produk" className="grid-responsive-2" style={{ minHeight: '800px', background: '#ffffff', color: 'var(--text-primary)', gap: 0 }}>
         {/* Left Image */}
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '300px' }}>
           <img src="/assets/images/event_concert.png" alt="VOLT PRO MAX" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
         </div>
         
@@ -181,7 +180,7 @@ const LandingHome: React.FC = () => {
           </p>
 
           {/* Pricing Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
+          <div className="grid-responsive-2" style={{ gap: '20px', marginBottom: '40px' }}>
             <div style={{ background: '#f8fafc', border: '1px solid var(--glass-border)', borderRadius: '12px', padding: '32px 24px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
               <div style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '1px', marginBottom: '16px', color: 'var(--status-success)' }}>PAKET HARIAN!</div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textDecoration: 'line-through', marginBottom: '8px' }}>Rp. 750.000</div>
@@ -223,7 +222,7 @@ const LandingHome: React.FC = () => {
           </div>
 
           {/* Features Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+          <div className="grid-responsive-2" style={{ gap: '40px' }}>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
               <Shield size={40} strokeWidth={1.5} color="var(--status-success)" />
               <div>
@@ -254,7 +253,7 @@ const LandingHome: React.FC = () => {
       </section>
 
       {/* Terangin-style Product Section 2 (Flipped) */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '800px', background: '#f8fafc', color: 'var(--text-primary)', borderTop: '1px solid var(--glass-border)' }}>
+      <section className="grid-responsive-2" style={{ minHeight: '800px', background: '#f8fafc', color: 'var(--text-primary)', borderTop: '1px solid var(--glass-border)', gap: 0 }}>
         {/* Left Content */}
         <div style={{ padding: '80px 8%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '8px', color: 'var(--text-primary)' }}>VOLT BASIC</h2>
@@ -265,7 +264,7 @@ const LandingHome: React.FC = () => {
           </p>
 
           {/* Pricing Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
+          <div className="grid-responsive-2" style={{ gap: '20px', marginBottom: '40px' }}>
             <div style={{ background: '#ffffff', border: '1px solid var(--glass-border)', borderRadius: '12px', padding: '32px 24px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
               <div style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '1px', marginBottom: '16px', color: 'var(--status-success)' }}>PAKET TENAN!</div>
               <div style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '8px', color: 'var(--text-primary)' }}>Rp. 150.000</div>
@@ -286,7 +285,7 @@ const LandingHome: React.FC = () => {
         </div>
 
         {/* Right Image */}
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '300px' }}>
           <img src="/assets/images/event_foodtruck.png" alt="VOLT BASIC" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
         </div>
       </section>
@@ -294,7 +293,7 @@ const LandingHome: React.FC = () => {
       {/* E-Waste Section */}
       <section style={{ padding: '100px 5%', background: '#fff', borderTop: '1px solid var(--glass-border)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '64px', alignItems: 'center' }}>
+          <div className="grid-responsive-2" style={{ alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(5, 150, 105, 0.1)', borderRadius: '50px', color: 'var(--status-success)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '24px' }}>
                 <Recycle size={16} /> Peduli Lingkungan
@@ -306,7 +305,7 @@ const LandingHome: React.FC = () => {
                 Punya limbah elektronik (e-waste) dari event Anda dan bingung mau dibuang ke mana? VOLT-GRID siap menjemput e-waste Anda! Kami bekerjasama dengan Dinas Lingkungan Hidup Provinsi DKI Jakarta untuk memastikan limbah elektronik didaur ulang secara bertanggung jawab, karena kami tidak mengolahnya <i>in-house</i>.
               </p>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '40px' }}>
+              <div className="grid-responsive-2" style={{ gap: '24px', marginBottom: '40px' }}>
                 <div style={{ background: 'var(--bg-color-secondary)', padding: '24px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
                   <Truck size={32} color="var(--status-success)" style={{ marginBottom: '16px' }} />
                   <h4 style={{ fontWeight: 800, marginBottom: '8px', fontSize: '1.1rem' }}>Penjemputan</h4>
