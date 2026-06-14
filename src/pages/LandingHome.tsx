@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, Shield, Camera, MessageCircle, Sun, CheckCircle2, Music, Utensils, Star, BatteryCharging } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Camera, MessageCircle, Sun, CheckCircle2, Music, Utensils, Star, BatteryCharging, Truck, Recycle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const LandingHome: React.FC = () => {
@@ -288,6 +288,60 @@ const LandingHome: React.FC = () => {
         {/* Right Image */}
         <div style={{ position: 'relative', overflow: 'hidden' }}>
           <img src="/assets/images/event_foodtruck.png" alt="VOLT BASIC" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
+        </div>
+      </section>
+
+      {/* E-Waste Section */}
+      <section style={{ padding: '100px 5%', background: '#fff', borderTop: '1px solid var(--glass-border)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '64px', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(5, 150, 105, 0.1)', borderRadius: '50px', color: 'var(--status-success)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '24px' }}>
+                <Recycle size={16} /> Peduli Lingkungan
+              </div>
+              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '24px', color: 'var(--text-primary)' }}>
+                Kami Jemput E-Waste Anda!
+              </h2>
+              <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '32px' }}>
+                Punya limbah elektronik (e-waste) dari event Anda dan bingung mau dibuang ke mana? VOLT-GRID siap menjemput e-waste Anda! Kami bekerjasama dengan Dinas Lingkungan Hidup Provinsi DKI Jakarta untuk memastikan limbah elektronik didaur ulang secara bertanggung jawab, karena kami tidak mengolahnya <i>in-house</i>.
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '40px' }}>
+                <div style={{ background: 'var(--bg-color-secondary)', padding: '24px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                  <Truck size={32} color="var(--status-success)" style={{ marginBottom: '16px' }} />
+                  <h4 style={{ fontWeight: 800, marginBottom: '8px', fontSize: '1.1rem' }}>Penjemputan</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>Untuk e-waste dengan berat lebih dari 5kg, tim kami siap menjemput ke lokasi Anda.</p>
+                </div>
+                <div style={{ background: 'var(--bg-color-secondary)', padding: '24px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                  <Recycle size={32} color="var(--status-warning)" style={{ marginBottom: '16px' }} />
+                  <h4 style={{ fontWeight: 800, marginBottom: '8px', fontSize: '1.1rem' }}>Drop-off</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>Untuk e-waste di bawah 5kg, Anda dapat menitipkannya ke <i>crew</i> kami saat penyewaan.</p>
+                </div>
+              </div>
+
+              <button 
+                onClick={() => window.open('https://ewaste.dinaslhdki.id', '_blank')}
+                style={{ 
+                  padding: '16px 32px', borderRadius: '50px', background: 'var(--status-success)', 
+                  color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 700,
+                  fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '8px',
+                  boxShadow: '0 8px 16px rgba(16, 185, 129, 0.2)'
+                }}
+              >
+                Pelajari Lebih Lanjut di DLH DKI <ArrowRight size={20} />
+              </button>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'relative', height: '500px', width: '100%', borderRadius: '32px', overflow: 'hidden', background: 'var(--glass-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src="/assets/images/event_concert.png" alt="E-Waste Management" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}></div>
+                <div style={{ position: 'absolute', bottom: '40px', left: '40px', right: '40px' }}>
+                  <h3 style={{ color: '#fff', fontSize: '1.8rem', fontWeight: 800, marginBottom: '8px' }}>Zero Waste Event</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.5 }}>Mari wujudkan event yang 100% bebas dari polusi udara, suara, dan limbah tak terkelola.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
